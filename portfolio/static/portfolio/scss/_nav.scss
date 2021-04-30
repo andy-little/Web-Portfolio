@@ -1,0 +1,199 @@
+//DESKTOP MENU
+.desk-menu-cont {
+    display: flex;
+    justify-content: center;
+}
+.desk-menu {
+    position: fixed;
+    width: 80%;
+    max-width: 3rem;
+    transform: translateY(-1.5rem);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: $bold;
+    z-index: 200;
+    background-color: rgba($primary, .5);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    transition: all 200ms ease-in-out;
+    height: auto;
+    
+
+    &:hover, &.open {
+        transform: translateY(0);
+        height: 3.5rem;
+        max-width: 40rem;
+        
+        opacity: 1;
+        
+        border-bottom-left-radius: $soft-radius;
+        border-bottom-right-radius: $soft-radius;
+        .desk-menu-open {
+            font-size: 0;
+        }
+        .desk-menu-links {
+            opacity: 1;
+            transition: opacity 150ms ease-in;
+        }
+    }
+    &.close {
+        transform: translateY(-5rem);
+    }
+    &-links {
+        display: flex;
+        justify-content: space-around;
+        opacity: 0;
+        
+    }
+
+    &-open {
+        display: block;
+        position: absolute;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        bottom: 0px;
+        
+    }
+    a {
+        position: relative;
+        z-index: 200;
+        display: block;
+        padding: .7em;
+        transition: color 250ms ease-in-out;
+        &:hover {
+            cursor: pointer;
+            color: $accent;
+        }
+    }
+
+}
+
+
+//MOBILE
+//SHRINK AND POSITION HAMBURGER 
+.scale {
+    transform: scale(.33);
+    position: fixed;
+    z-index: 200;
+    top: 0;
+    right: 0;
+}
+//HAMBURGER BUTTON circle
+.mob-tog {
+    margin: 5.5rem 22vw 0 0;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: transparent;
+    border: $primary-light 6px solid;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: border .3s ease-in-out;
+    &:hover {
+        border: $accent 6px solid;
+
+        span {
+            background-color: $accent;
+        }
+    }
+
+    &.open {
+        .menu__top {
+            top: 26px;
+            transform: rotate(45deg);
+        }
+        .menu__middle {
+            left: -10px;
+            opacity: 0;
+        }
+        .menu__bottom {
+            top: 26px;
+            transform: rotate(-45deg);
+        }
+    }
+}
+
+// HAMBURGER LINES
+.menu {
+    position: relative;
+    top: 30%; // positions lines in circle
+
+    &__top,
+    &__middle,
+    &__bottom {
+        border-radius: 2px;
+        width: 60px;
+        height: 6px;
+        background: $primary-light;
+        position: absolute;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        transition: all 0.3s ease-in-out;
+    }
+
+    &__top {
+        top: 11px;
+    }
+
+    &__middle {
+        top: 27px;
+        opacity: 1;
+    }
+
+    &__bottom {
+        top: 44px;
+    }
+}
+
+//OVERLAY FOR MOB MENU
+.overlay {
+    opacity: 0;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-image: linear-gradient($primary, transparent);
+    z-index: -100; //JUST ME
+    transition: opacity 200ms ease-in-out;
+    &.open {
+        z-index: 200;
+        opacity: 1;
+    }
+    
+}
+// MOBILE MENU
+.mob-links {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    margin-left: 50%;
+    transform: translateX(-50%) scale(0);
+    z-index: 200;
+    color: $primary;
+    background: white;
+    padding: 1.5em;
+    border-radius: 13px;
+    width: 90%;
+    height: auto;
+    text-align: center;
+    top: 1rem;
+    transform-origin: top;
+    transition: transform 200ms ease-in-out;
+    a {
+        font-size: 1.2rem !important;
+        font-weight: $bold;
+        &:not(:last-child) {
+            margin-bottom: .7rem;
+        }
+    }
+        &.open {
+            transform: translateX(-50%) scale(1);
+            transition: transform 200ms ease-in-out;
+        }
+        
+}

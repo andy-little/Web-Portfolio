@@ -1,0 +1,225 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'portfolio/scss/styles.css'%}">
+    <link rel="stylesheet" href="{% static 'portfolio/scss/all.css' %}">
+    <script src="{% static 'portfolio/all.js' %}"></script>
+    <title>Andy Little Portfolio</title>
+</head>
+<body>
+    <main>
+        <div class="overlay hide-desk"></div>
+        <nav>
+            <div class="desk-menu-cont">
+                <div class="desk-menu hide-mob open">
+                    <div class="desk-menu-links">
+                        <a class="scroll-link" href="#">Home</a>
+                        <a class="scroll-link" href="#projects">Projects</a>
+                        <a class="scroll-link" href="#about">About</a>
+                        <a class="scroll-link" href="#contact">Contact</a>
+                    </div>
+                    <div class="desk-menu-open"><i class="far fa-caret-square-down"></i></div>
+                </div>
+            </div>
+            <div class="mob-links hide-desk">
+                <a class="scroll-link mob-links-close" href="#">Home</a>
+                <a class="scroll-link mob-links-close" href="#projects">Projects</a>
+                <a class="scroll-link mob-links-close" href="#about">About</a>
+                <a class="scroll-link mob-links-close" href="#contact">Contact</a>
+            </div>
+            <div class="scale">
+                <div class="hide-desk mob-tog">
+                    <!-- Hamburger Icon -->
+                    <div class="menu">
+                        <span class="menu__top"></span>
+                        <span class="menu__middle"></span>
+                        <span class="menu__bottom"></span>
+                    </div>
+                    
+                </div>
+            </div>
+
+        </nav>
+        <header class="marg-b">
+            <div class="hero-bg"></div>
+            <img class="hero-logo" src="{% static 'portfolio/images/logo.png'%}" alt="Andy's Logo">
+            <img class="hero-photo" src="{% static 'portfolio/images/andy.png'%}" alt="photo of Andy">
+            <div class="hero-hi">
+                <h3 class="hero-title">Hi!</h3>
+                <p class="hero-text">I’m Andy, a Full-Stack web developer in london. I specialise in building web apps using <span class="text-accent">Python</span> - <span class="text-accent">Django</span>, <span class="text-accent">JavaScript</span>, <span class="text-accent">HTML</span> and <span class="text-accent">CSS</span>. This site is an example of my work:</p>
+                <div class="hero-space"></div>
+                <a class="hero-btn btn" target="_blank" href="/">Source Code</a>
+            </div>
+        </header>
+
+
+        <!--ANYONE CAN LEARN-->
+        <section id="projects" class="project right-left guitar marg-b">
+            <h1 class="section-title">Projects</h1>
+            <div class="project-btns">
+                <a class="btn" target="_blank" href="https://www.anyonecanlearntoplayguitar.com">Live Website</a>
+                <a class="btn" target="_blank" href="https://github.com/andy-little/AnyoneCanLearnToPlayGuitar">Source Code</a>
+            </div>
+            <h3 class="project-title">learn to play guitar</h3>
+            <div class="project-background"></div>
+        
+                <h4 class="project-subtitle">In my time as a teacher I wrote a book. Here it is implemented as a website.</h4>
+                <div class="project-text">This was a front-end heavy project where I focused on responsive design.
+                    Functionality of the site includes:
+                    <ul>
+                        <li>Personal account creation</li>
+                        <li>Secure Login</li>
+                        <li>Change Password via email</li>
+                        <li>Users can track and save progress</li>
+                        <li>A dynamically styled audio player built with javascript</li>
+                    </ul>
+                </div>
+                    
+
+            <img class="project-laptop show guitar" data-id="g1" src="{% static 'portfolio/images/lapmob-gtr-1.png'%}" alt="laptop">
+        </section>
+
+        <!--MONEY 2-->
+
+        <section class="project left-right money marg-b">
+            <div class="project-btns">
+                <a class="btn" target="_blank" href="/money">Live Website</a>
+                <a class="btn" target="_blank" href="/">Source Code</a>
+            </div>
+            <h3 class="project-title">money squared</h3>
+            <div class="project-background"></div>
+        
+                <h4 class="project-subtitle">An app I built for managing household bills and other shared costs.</h4>
+                <div class="project-text">Users first create a household. Members of this household can add their transactions to the group. Members can also:
+                    <ul>
+                        <li>view their entire transaction history</li>
+                        <li>easily see who owes who what</li>
+                        <li>settle debts</li>
+                        <li>edit/delete transactions not yet settled</li>
+                    </ul>
+                    In this project I created my own paginator api which, unlike Django's, can be used asynchronously.
+                </div>
+                    
+
+            <img class="project-laptop show money" data-id="g1" src="{% static 'portfolio/images/lapmob-money-1.png'%}" alt="laptop">
+        </section>
+
+        <!--ABOUT ME-->
+        <section class="about right-left marg-b">
+            <h1 id="about" class="section-title">About Me</h1>
+            <h3 class="about-title">technical</h3>
+            <div class="about-background"></div>
+                <div class="about-text"><strong>HARVARD’S CS50</strong><br>
+                    Studied C, data structures, databases, algorithms, problem solving and the art of programming. 
+                    <br><br><strong>CS50 WEB</strong><br>
+                    Learnt to build web apps in Django, single page user interfaces, APIs. Touched on version control, testing, scalability and security.
+                    <br><br><strong>KEY SKILLS</strong>
+                    <ul>
+                        <table>
+                            <tr>
+                                <td class="about-table-c1">
+                                    <li>Python</li>
+                                    <li>Vanilla Javascript</li>
+                                    <li>CSS / SCSS</li>
+                                    <li>SQL</li>
+                                    <li>Git Hub</li>
+                                </td>
+                                <td class="about-table-c2">
+                                    <li>Django</li>
+                                    <li>Flask</li>
+                                    <li>BASH</li>
+                                    <li>Figma</li>
+                                </td>
+                            </tr>
+                        </table>
+                    </ul>
+                </div>
+            <img class="about-img" src="{% static 'portfolio/images/about.jpg' %}" alt="photo of workspace with computer">
+            <a target="_blank" class="btn about-btn" href="{% static 'portfolio/pdf/cv.pdf'%}">DOWNLOAD CV</a>
+        </section>
+        
+        <!--Personal-->
+        <section class="about left-right marg-b">
+            <h3 class="about-title">personal</h3>
+            <div class="about-background"></div>
+                <div class="about-text">
+                    <br>
+                    I’m Andy and I’m 21 years old expressed in hexadecimal. My strengths are that I am a fast learner and I’m adaptable. My weaknesses are that I’m a perfectionist and I work too hard. <i>Wink!</i>
+                    <br><br>When I was young I liked to take things apart and try to put them back together again. At 13 I taught myself <strong>HTML</strong> and a little bit of <strong>C</strong>. I delighted in starting up my friends Windows 95 machines in the command line and renaming thier password file.
+                    <br><br>I persued a carreer in music. I taught, composed, produced, performed and ran a <a target="_blank" href="https://open.spotify.com/artist/4hZ0YIg9waQoLrqq1DCUH9?si=2HEyVvxdQUqP_TsKhfK6aw">band</a>. Unable to hire designers I instead learnt to use <strong>Adobe Creative Suite</strong>. But the music industry was rough. Well paid work came with the caveat that it is unenjoyable and deviated from why I joined the industry. Fulfilling work was poorly paid. It was for this reason that after 14 years <strong>I decided to return to my first love, computers</strong>.
+                    <br><br>
+                </div>
+            <img class="about-img" src="{% static 'portfolio/images/about-gtr.jpg'%}" alt="andy on stage with band at pizza express jazz club">
+        </section>
+
+        <!--CONTACT-->
+        <section class="contact marg-b">
+            <h3 id="contact" class="section-title">Contact</h3>
+            <div class="contact-card">
+                <form class="form" action="" method="post">
+                    {% csrf_token %}
+                    <div class="form-row-1">
+                        <div class="form-name">
+                            <label for="name">name:</label>
+                            <input required class="form-input-control" name="name" id="name" type="text">
+                        </div>
+                        <div class="form-email">
+                            <label for="email">email:</label>
+                            <input required class="form-input-control" name="email" id="email" type="email">
+                        </div>
+                    </div>
+
+                    <div class="form-message">
+                        <label for="message">message:</label>
+                        <textarea required rows="7" maxlength="3000" name="message" class="form-input-control" id="message"></textarea>
+                    </div>
+                    <div class="g-recaptcha" data-sitekey="6LdwoL0aAAAAAG84eNUUi5KkFAogsiPrNIKOdauM"></div>
+                    <button class="btn form-btn" type="submit">Send Message</button>
+                </form>
+            </div>
+            
+
+        </section>
+
+        <br><br><br><br>
+        <footer class="footer">
+            <div class="footer-nav">
+                <a href="#">Home</a>
+                <a href="#projects">Projects</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-container">
+                <div class="footer-author">
+                    <p>design by andy little</p>
+                    <p>© 2021 all rights reserved</p>
+                </div>
+                <div class="footer-links">
+                    <img src="{% static 'portfolio/images/logo-sm-white.png'%}" alt="logo">
+                    
+                    <a target="_blank" href="www.linkedin.com/in/andy-little-webdev"><i class="fab fa-linkedin"></i><span class="footer-links-text">Linked In</span></a>
+                    <a target="_blank" href="https://github.com/andy-little"><i class="fab fa-github"></i><span class="footer-links-text">GitHub</span></a>
+                </div>
+                <div class="footer-contact">
+                    <div class="contact-email">
+                        <strong>Enquires:</strong><br>
+                        <span><a href="mailto:andy.little@hotmail.co.uk">andy.little@hotmail.co.uk</a></span>
+                    </div>
+                    <div class="contact-phone">
+                        <br class="desk-only">
+                        <strong>Phone:</strong><br>
+                        <span><a href="tel:07985742983">(0)7985 - 742 983</a></span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bg"></div>
+            <div class="footer-bg-2"></div>
+            
+        </footer>
+    </main>
+</body>
+</html>

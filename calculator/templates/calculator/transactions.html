@@ -1,0 +1,149 @@
+{% extends "calculator/layout.html" %}
+
+{% block title %}{{house.name|title}}'s transactions{% endblock %}
+
+{% load static %}
+{% block script %}
+<script src="{% static 'calculator/transactions.js' %}"></script>  
+{% endblock script %}
+
+{% block body %}
+
+
+<!--FORM-->
+<section class="new_tran flex_desk flex_desk-jc-sa">
+    <div class="new_trans_container">
+        <h1>Add New Transactions:</h1>
+        <div class="form">
+            <form action="{% url 'transactions' %}" method="post">
+                {% csrf_token %}
+                <div>
+                    <select name="member" required>
+                        <option value="" disabled selected>Who Paid?</option>
+                        {% for member in house.member.all %}
+                        <option value="{{member.pk}}">{{member.username|title}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div>
+                    <input  name="item" placeholder="What did they pay for?" type="text" autocomplete="off" required>
+                </div>
+        
+                <div>
+                    <input name="cost" placeholder="£0.00" type="number" min="0.00" max="10000.00" step="0.01" autocomplete="off" required>
+                </div>
+                <div>
+                    <button class="yellow" type="submit">Add Transaction</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+<!--TRANSACTIONS TABLE-->
+
+<section class="data{% if not house.items.first %} hidden{% endif %}">
+    
+        
+    <div class="trans_container flex_desk flex_desk-jc-sa">
+        <div class="accomp">
+            <h1>Manage Transactions:</h1>
+            <ul>
+                <li>Edit/Delete Transactions</li>
+                <li>View History</li>
+                <li>Check individual balances</li>
+            </ul>
+        </div>
+        
+        <div class="table_container">
+            <div class="table_buttons">
+                <button class="table_button active" data-id="unsettled">Unsettled</button>
+                <button class="table_button" data-id="settled">Settled</button>
+                <button class="table_button" data-id="balances">Balances</button>
+            </div>
+            <!--table added via js-->
+            <div class="table active unsettled-container settled-container">
+                <table class="table_settled"></table>
+                    <!--paginator-->
+                    <div class="paginator flex flex-jc-c constrain_width">
+                        <nav aria-label="table navigation">
+                            
+                            <button id="table_first" class="paginate_btn" type="button" >&laquo;</button>
+                            <button id="table_prev" class="paginate_btn" type="button">prev</button>
+                        
+                            <span class="page_counter"></span>
+                    
+                            <button id="table_next" class="paginate_btn" type="button">next</button>
+                            <button id="table_last" class="paginate_btn" type="button">&raquo;</button>
+                        </nav>
+                    </div>
+            </div>
+
+            <div class="table balances-container">
+                <table>
+                    <tr>
+                        <th>Member</th>
+                        <th>Balance</th>
+                    </tr>
+                    {% for member in house.member.all %}
+                    <tr>
+                        <td>{{member.username|title}}</td>
+                        {% if member.total.balance < 0 %}
+                        <td class="negative">£{{member.total.balance}}</td>
+                        {% else %}
+                        <td class="positive">£{{member.total.balance}}</td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            </div>
+
+
+        </div>
+   
+</section>
+
+<!--GET SQUARED CALCULATOR-->
+
+<section class="square {% if not settlements %}hidden{% endif %}">
+    <div class="square_container flex_desk flex_desk-jc-sa flex-ai-c">
+        <div class="accomp">
+            <h1>Get Squared:</h1>
+            <p>This is a table to show who owes whom what. Once you have settled this amoungst yourselves hit the big yellow button to square all debts.</p>
+            <form action="{% url 'get_squared' %}" method="POST">
+                {% csrf_token %}
+                <div class="flex flex-jc-c flex-ai-c">
+                    <button class="secondary flex flex-jc-c flex-ai-c" type="submit">Get<span class="hachi">²</span></button>
+                </div>
+
+                
+            </form>
+        </div>
+        
+
+        <div class="table table--square">
+        
+            <table class="large">
+                <tr>
+                    <th>Member</th>
+                    <th>Owes</th>
+                    <th>To</th>
+                </tr>
+                {% for settlement in settlements %}
+                <tr>
+                    <td>{{ settlement.sender.capitalize }}</td>
+                    <td>£{{ settlement.amount }}</td>
+                    <td>{{ settlement.recipient.capitalize }}</td>
+                </tr>
+            {% endfor %}
+
+            </table>
+        </div>
+    </div>
+
+</section>
+
+{% endblock %}
+

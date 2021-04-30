@@ -1,0 +1,25 @@
+{% extends "calculator/layout.html" %}
+
+{% block body %}
+    {% if user.is_authenticated %}
+        <div class="container--px">
+    
+            <h2>Are you sure you wish to delete this item?</h2>
+    
+            <h3>{{item.member|title}}: {{ item.item }}</h3>
+            <div class="form">
+                <form action="{% url 'delete' item.pk %}" method="post">
+                    {% csrf_token %}
+                    <div><input hidden type="text" name="confirm"></div>
+                    <div>
+                        <button class="delete" type="submit" name="confirm" value="confirm">Delete</button>
+                        <a href="{% url 'transactions' %}" alt="cancel"><button class="cancel" type="button">Cancel</button></a>
+                    </div>
+                </form>
+            </div>
+    
+        </div>
+    
+    {% endif %}
+
+{% endblock %}

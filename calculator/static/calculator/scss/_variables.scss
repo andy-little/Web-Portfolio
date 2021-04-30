@@ -1,0 +1,25 @@
+// Colours
+$primary: #05082c;
+$secondary: #CDA716;
+$primary_soft: #32355A;
+$primary_v_soft: #EFEDFF;
+
+$dblend: #403A20;
+$lblend: #8E7E11;
+$mblend: #675C19;
+
+$pale: whitesmoke;
+
+
+
+$danger: rgba($color: hsl(347, 65%, 51%), $alpha: 1);
+$success: #2B8987;
+
+
+$bg_color_dark: #EFEDFF;
+$bg_color: hsl(250, 100%, 99%);
+$bg_color_light: white;
+// Fonts
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
+$main-fnt: 'Inter', Helvetica, sans-serif;

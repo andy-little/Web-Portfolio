@@ -1,0 +1,30 @@
+{% extends "calculator/layout.html" %}
+
+
+{% block body %}
+    <div class="container--px">
+        <h1>Register:</h1>
+        <div class="form">
+            <form action="{% url 'register' %}" method="POST">
+                {% csrf_token %}
+                <!-- <div>
+                    <input autofocus type="text" name="username" placeholder="Username">
+                </div> -->
+                <div>
+                    <input required type="text" name="email" placeholder="Email Address"> <!--deliberately using text field to make people's life easier when testing site-->
+                </div>
+                <div>
+                    <input required type="password" name="password" placeholder="Password">
+                </div>
+                <div>
+                    <input required type="password" name="confirmation" placeholder="Confirm Password">
+                </div>
+                <div>
+                    <button type="submit">Create Account</button>
+                </div>
+            </form>
+        </div>
+        <p class="link">Already have an account? <a href="{% url 'login' %}">Sign In here.</a></p>
+    </div>
+
+{% endblock %}

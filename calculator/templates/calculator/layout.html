@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money²</title>
+    <link rel="stylesheet" href="{% static 'calculator/scss/style.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'calculator/scss/all.css'%}">
+    <script src="{% static 'calculator/index.js' %}"></script>
+    {% block script %}
+    
+    {% endblock %}
+</head>
+<body>
+    <header class="header">
+        <nav class="container container--pall flex flex-jc-sb flex-ai-c">
+            <a href="{% url 'index' %}"><img class="logo" src="{% static 'calculator/images/Logo.PNG' %}" alt="logo"></a>
+            
+            <div class="hide-phone header__links flex flex-jc-sb flex-ai-c">
+
+                
+                {% if user.is_authenticated %}
+                    {% if user.house %}
+                        <a href="{% url 'index' %}">Home</a>
+                        <a href="{% url 'transactions' %}">Transactions</a>
+                        <!-- <a class="square" href="{% url 'get_squared' %}">Get<span class="hachi">²</span></a> -->
+                        <a href="{% url 'household' %}">Edit Household</a>
+                    {% else %}
+                        <a href="{% url 'getting_started' %}">Create Household</a>
+                    {% endif %}
+                    <a href="{% url 'logout' %}">Sign Out</a>
+                {% else %}
+                    <a href="{% url 'index' %}">Home</a>
+                    <a href="{% url 'register' %}">Register</a>
+                    <a href="{% url 'login' %}">Sign In</a>
+                {% endif %}
+                
+                
+                
+            </div> 
+            
+            <div id="toggleMenu" class="header__hamburger hide-desk">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <div id="overlay"></div>
+        <div id="mobileMenu" class="header__menu flex flex-jc-c hidden">
+            {% if user.is_authenticated %}
+                {% if user.house %}
+                    <a href="{% url 'index' %}">Home</a>
+                    <a href="{% url 'transactions' %}">Transactions</a>
+                   <!--  <a href="{% url 'get_squared' %}">Get<span class="hachi">²</span></a> -->
+                    <a href="{% url 'household' %}">Edit Household</a>
+                {% else %}<a href="{% url 'household' %}">Create Household</a>{% endif %}
+                <a href="{% url 'logout' %}">Sign Out</a>
+            {% else %}
+                <a href="{% url 'index' %}">Home</a>
+                <a href="{% url 'register' %}">Register</a>
+                <a href="{% url 'login' %}">Sign In</a>
+            {% endif %}
+            
+        </div>
+
+    </header>
+        {% if message %}
+            <div class="error">{{ message }}</div>
+        {% endif %}
+        {% if success_message %}
+            <div class="success">{{ success_message }}</div>
+        {% endif %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="{{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        {% block body %}
+
+        {% endblock %}
+</body>
+</html>

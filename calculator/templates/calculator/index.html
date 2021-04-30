@@ -1,0 +1,49 @@
+
+{% extends "calculator/layout.html" %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block body %}
+<main class="index">
+    <section class="welcome">
+        <h1 class="welcome-title">Welcome to Money Squared</h1>
+        <h2 class="welcome-subtitle">A web app for managing your household outgoings</h2>
+        <p class="welcome-text">Money Squared is a web app for keeping track of your shared household expenses. Each member of the household can quickly and easily record any payment they have made for the benefit of the house eg.- a water bill or some cleaning products.
+            <span class="bold">Our nifty algorithm calculates who owes whom what so that you don’t have to.</span></p>
+    </section>
+
+    <section class="start no-lr-pad">
+        <div class="start-bg"></div>
+        <h2 class="start-title">Getting Started</h2>
+        <article class="step step-1">
+            <h3 class="step-title">STEP 1</h3>
+            <h4 class="step-subtitle">Create Your Household</h4>
+            <img src="{% static 'calculator/images/create_house.png' %}" alt="">
+            <p class="step-text">To get started create an account and choose a name for your household. Add at least 2 and up to 6 members. </p>
+        </article>
+        <article class="step step-2">
+            <h3 class="step-title">STEP 2</h3>
+            <h4 class="step-subtitle">Add A Transaction</h4>
+            <img src="{% static 'calculator/images/new_tran.png' %}" alt="">
+            <p class="step-text">Choose a name for your household and add up to 6 members. </p>
+        </article>
+        <div class="start-space"></div>
+        <article class="step step-3">
+            <h3 class="step-title">STEP 3</h3>
+            <h4 class="step-subtitle">View/Edit Your Transaction History</h4>
+            <img src="{% static 'calculator/images/tran_table.png' %}" alt="">
+            <p class="step-text">Use the transaction table to toggle through your complete transaction history. Unsettled transactions can be deleted or edited. The balances tabs show how much each member has either overpaid or underpaid.</p>
+        </article>
+        <article class="step step-4">
+            <h3 class="step-title">STEP 4</h3>
+            <h4 class="step-subtitle">Get Squared</h4>
+            <img src="{% static 'calculator/images/get_squared.png' %}" alt="">
+            <p class="step-text">Easily view who owes whom what. Once your debts have been settled, hit the big Get Squared button to bring everyone’s balance back to 0.</p>
+        </article>
+        {% if not user.is_authenticated %}
+            <a class="btn" href="{% url 'register' %}">Get Started!</a>
+        {% endif %}
+    </section>
+    
+</main>
+{% endblock %}

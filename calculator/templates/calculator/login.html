@@ -1,0 +1,24 @@
+{% extends "calculator/layout.html" %}
+
+{% block body %}
+
+    <div class="container--px">
+        <h1>Sign In:</h1>
+        <div class="form">
+            <form action="{% url 'login' %}" method="post">
+                {% csrf_token %}
+                <div>
+                    <input required autofocus type="text" name="email" placeholder="Email Address">
+                </div>
+                <div>
+                    <input required type="password" name="password" placeholder="Password">
+                </div>
+                <div>
+                    <button type="submit">Login</button>
+                </div>
+            </form>
+        </div>
+        <p class="link">Don't have an account? <a href="{% url 'register' %}">Register here.</a></p>
+    </div>
+
+{% endblock %}

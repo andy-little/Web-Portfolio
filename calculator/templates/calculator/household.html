@@ -1,0 +1,44 @@
+{% extends "calculator/layout.html" %}
+{% load static %}
+{% block script %}
+<script src="{% static 'calculator/household.js' %}"></script>  
+{% endblock script %}
+
+{% block body %}
+    <div class="container--house">
+        <h2> Update Household Info </h2>
+        <div class="form household">
+            <form action="" method="post">
+                {% csrf_token %}
+                <h4 class="instruction secondary__text">Rename Household:</h4>
+                <div>
+                    <input type="text" name="house" value="{{ house|title }}" autocomplete="off">
+                </div>
+                <h4 class="secondary__text">Remove Members</h4>
+                {% for member in house.member.all %}
+                    <div id="m{{member.pk}}">
+                        <input readonly="readonly" type="text" id="i{{member.pk}}" name="rm_member{{ forloop.counter }}" value="{{member.username}}" autocomplete="off"><span class="del_member" data-id="{{member.pk}}" data-count="">-</span>
+                    </div>
+                {% endfor %}
+                <h4 class="secondary__text">Add Members</h4>
+                <p class="instruction">Enter name:</p>
+                <div id="m1">
+                    <input type="text" name="add_member1" placeholder="1st member's name" autocomplete="off"><span class="add_button" data-id="m2">+</span>
+                </div>
+                <div class="hidden" id="m2">
+                    <input type="text" name="add_member2" placeholder="2nd member's name" autocomplete="off"><span class="add_button" data-id="m3">+</span><span class="remove_button">-</span>
+                </div>
+                <div class="hidden" id="m3">
+                    <input type="text" name="add_member3" placeholder="3rd member's name" autocomplete="off"><span class="add_button" data-id="m4">+</span><span class="remove_button">-</span>
+                </div>
+                <div class="hidden" id="m4">
+                    <input type="text" name="add_member4" placeholder="4th member's name" autocomplete="off"><span class="remove_button">-</span>
+                </div>
+                <div>
+                    <button type="submit">Submit Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock body %}
