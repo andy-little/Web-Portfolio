@@ -1,9 +1,13 @@
 from django.shortcuts import render
 import smtplib
 import os
+import json
 
-EMAIL_ADDRESS = os.environ.get('LEARN_GUITAR_USER')
-EMAIL_PASS = os.environ.get('LEARN_GUITAR_PASS')
+with open('/etc/config.json') as config_file:
+    config = json.load(config_file)
+
+EMAIL_ADDRESS = config.get('EMAIL_USER') 
+EMAIL_PASS = config.get('EMAIL_PASS')
 
 # Create your views here.
 

@@ -1,0 +1,139 @@
+.header {
+    background-color: white;
+    .logo {
+        width: 8rem;
+        margin-right: 2em;
+
+        @include breakpoint-min(large) {
+            width: 10rem;
+        }
+    }
+    
+    
+    &__hamburger {
+
+        > span {
+            //position: relative;
+            display: block;
+            width: 26px;
+            height: 2px;
+            background: $primary;
+            transform-origin: 3px 1px;
+            margin-bottom: 5px;
+            transition: 250ms ease-in-out;
+        }
+    }
+
+    // Hamburger Open
+    &.open {
+
+        .header__hamburger {     
+            > span:first-child {
+                transform: rotate(45deg);
+            }
+
+            > span:nth-child(2) {
+                opacity: 0;
+            }
+
+            > span:last-child {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+
+    // DESKTOP NAV
+    &__links {  
+        width: 90%;
+       
+        a {
+            position: relative;
+            font-size: 1.25em;
+            color: $primary;
+            margin-left: 2em;
+            
+            &.square {
+                transform: translateY(-3.5px);
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                display: block;
+                width: 100%;
+                height: 2px;
+                background: $primary;
+                border-radius: 30%;
+                left: 0;
+                bottom: -8px;
+                opacity: 0;
+                transition: ease-in-out 250ms all;
+
+            }
+            &:last-child {
+                margin-left: auto;
+            }
+
+            &:hover{
+                color: $secondary;
+            
+                &::after {
+                    opacity: 1;
+                }
+            }
+        }
+
+    }
+    nav {
+        padding: 1.4rem 3rem 1.4rem 3rem;
+        position: relative;
+        border-bottom: solid 1.7px $primary;
+
+        @include breakpoint-min(large) {
+            border-bottom: solid 2px $primary;
+        }
+    }
+
+    // MOBILE DROP DOWN MENU
+    &__menu {   
+        z-index: 10;
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);    
+        width: 82%;
+        max-width: 27em;
+        background-color: $primary;
+        opacity: 0.9;
+        padding: 2.5em 1.5rem;
+        margin-top: 18px;
+        border-radius: 8px;
+
+        @include breakpoint-min(large){
+            display: none;
+        }
+
+        
+        a {
+            color: white;
+            display: block;
+            text-align: center;
+            font-size: 1.1em;
+
+            &:not(:last-child){
+                margin-bottom: 1.4em;
+            }
+
+        }
+    }
+    // covers screen under mobile menu
+    .overlay {
+        position: fixed;
+        display: block;
+        background-color: $bg_color;
+        z-index: 9;
+        width: 100%;
+        height: 100%;
+        
+    }
+
+}
