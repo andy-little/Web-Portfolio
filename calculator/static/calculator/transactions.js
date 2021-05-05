@@ -2,6 +2,11 @@
 
 
 document.addEventListener('DOMContentLoaded', () => {
+
+    const balanceInfo = document.querySelector('.fa-question-circle');
+    balanceInfo.onclick = () => {
+        balanceInfo.classList.toggle('open')
+    }
   
     let page = 1;
     let settled = false;

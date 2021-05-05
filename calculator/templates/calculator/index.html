@@ -8,7 +8,7 @@
     <section class="welcome">
         <h1 class="welcome-title">Welcome to Money Squared</h1>
         <h2 class="welcome-subtitle">A web app for managing your household outgoings</h2>
-        <p class="welcome-text">Money Squared is a web app for keeping track of your shared household expenses. Each member of the household can quickly and easily record any payment they have made for the benefit of the house eg.- a water bill or some cleaning products.
+        <p class="welcome-text">Money Squared is a web app for keeping track of your shared household expenses. Each member of the household can quickly and easily record any payment they have made for the benefit of the house eg a water bill or some cleaning products.
             <span class="bold">Our nifty algorithm calculates who owes whom what so that you don’t have to.</span></p>
     </section>
 
@@ -19,20 +19,20 @@
             <h3 class="step-title">STEP 1</h3>
             <h4 class="step-subtitle">Create Your Household</h4>
             <img src="{% static 'calculator/images/create_house.png' %}" alt="">
-            <p class="step-text">To get started create an account and choose a name for your household. Add at least 2 and up to 6 members. </p>
+            <p class="step-text">To get started, click <a href="{% url 'register' %}">register</a> to create an account. Choose a name for your household and add 2-6 members.</p>
         </article>
         <article class="step step-2">
             <h3 class="step-title">STEP 2</h3>
             <h4 class="step-subtitle">Add A Transaction</h4>
             <img src="{% static 'calculator/images/new_tran.png' %}" alt="">
-            <p class="step-text">Choose a name for your household and add up to 6 members. </p>
+            <p class="step-text">Navigate to the transaction page and fill in the details of a purchase made by a member of your group.</p>
         </article>
         <div class="start-space"></div>
         <article class="step step-3">
             <h3 class="step-title">STEP 3</h3>
             <h4 class="step-subtitle">View/Edit Your Transaction History</h4>
             <img src="{% static 'calculator/images/tran_table.png' %}" alt="">
-            <p class="step-text">Use the transaction table to toggle through your complete transaction history. Unsettled transactions can be deleted or edited. The balances tabs show how much each member has either overpaid or underpaid.</p>
+            <p class="step-text">Once an item has been added, use the transaction table to toggle through your complete transaction history. Unsettled transactions can be deleted or edited. The balances tab shows how much each member has either overpaid or underpaid.</p>
         </article>
         <article class="step step-4">
             <h3 class="step-title">STEP 4</h3>

@@ -214,5 +214,44 @@
         }
     }
 
+ 
+
 }
 
+.fa-question-circle {
+    float: right;
+    margin: 0 .3rem 0 0;
+    font-size: 1em;
+
+    @include breakpoint-min(large){
+        &:hover {
+            &::after {
+                display: block;
+            }
+        }
+    }
+
+    &:after {
+        content: 'A positive number means you are owed by the group. A negative number means you owe the group.';
+        position: absolute;
+        color: $primary;
+        background-color: $primary_v_soft;
+        padding: .5rem;
+        border-radius: 6px;
+        width: 13rem;
+        line-height: 1.6;
+        font-family: $main-fnt;
+        font-size: .8em;
+        text-align: left;
+        transform: translateX(-13rem);
+        display: none;
+    }
+
+    &.open {
+        &::after {
+            display: block;
+        }
+    }
+
+
+}

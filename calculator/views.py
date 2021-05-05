@@ -63,11 +63,13 @@ def transactions(request):
         # makes sure title is given    
         item = request.POST["item"]
         if item == '':
-            return HttpResponse('Description must be given.', status=400)
+            messages.error(request, f'Error: Description must be given.')
+            return HttpResponseRedirect(reverse('transactions'))
         # checks for positive int
         cost = request.POST["cost"]
-        if float(cost) < 0:
-            return HttpResponse('Negative numbers are not allowed.', status=400)
+        if float(cost) <= 0:
+            messages.error(request, f'Error: Cost must be greater than 0')
+            return HttpResponseRedirect(reverse('transactions'))
 
         # save transaction
         member = Member.objects.filter(pk=member_pk).first()
@@ -110,15 +112,18 @@ def item(request, pk):
     if item.household != house:
         return HttpResponse('Forbiden', status=401)
 
-    ###### could be seperate function check item valid
+    
     if request.method == 'POST':
         name = request.POST["item"]
+        
         if name == '':
-            return HttpResponse('Description must be given.', status=401)
+            messages.error(request, f'Failed to edit {item.item}. Description must be given.')
+            return HttpResponseRedirect(reverse('transactions'))
         cost = request.POST["cost"]
-        if float(cost) < 0:
-            return HttpResponse('Forbiden', status=401)
-    ######
+        if float(cost) <= 0:
+            messages.error(request, f'Failed to edit {item.item}. Cost must be greater than 0')
+            return HttpResponseRedirect(reverse('transactions'))
+        
         #updates item with new info
         item.item = name
         item.cost = cost
@@ -133,13 +138,7 @@ def item(request, pk):
 
 
 def index(request):
-    # if logged in
-    user = request.user
-    if user in User.objects.all():
-        house = Household.objects.filter(owner=user).first()
-        return render(request, 'calculator/index.html', {'house': house})
-    else:
-        return render(request, 'calculator/index.html')
+    return render(request, 'calculator/index.html')
 
 
 @login_required
