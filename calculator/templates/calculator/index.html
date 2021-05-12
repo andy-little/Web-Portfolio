@@ -15,35 +15,53 @@
     <section class="start no-lr-pad">
         <div class="start-bg"></div>
         <h2 class="start-title">Getting Started</h2>
-        <article class="step step-1">
-            <h3 class="step-title">STEP 1</h3>
-            <h4 class="step-subtitle">Create Your Household</h4>
-            <img src="{% static 'calculator/images/create_house.png' %}" alt="">
-            <p class="step-text">To get started, click <a href="{% url 'register' %}">register</a> to create an account. Choose a name for your household and add 2-6 members.</p>
-        </article>
-        <article class="step step-2">
-            <h3 class="step-title">STEP 2</h3>
-            <h4 class="step-subtitle">Add A Transaction</h4>
-            <img src="{% static 'calculator/images/new_tran.png' %}" alt="">
-            <p class="step-text">Navigate to the transaction page and fill in the details of a purchase made by a member of your group.</p>
-        </article>
-        <div class="start-space"></div>
-        <article class="step step-3">
-            <h3 class="step-title">STEP 3</h3>
-            <h4 class="step-subtitle">View/Edit Your Transaction History</h4>
-            <img src="{% static 'calculator/images/tran_table.png' %}" alt="">
-            <p class="step-text">Once an item has been added, use the transaction table to toggle through your complete transaction history. Unsettled transactions can be deleted or edited. The balances tab shows how much each member has either overpaid or underpaid.</p>
-        </article>
-        <article class="step step-4">
-            <h3 class="step-title">STEP 4</h3>
-            <h4 class="step-subtitle">Get Squared</h4>
-            <img src="{% static 'calculator/images/get_squared.png' %}" alt="">
-            <p class="step-text">Easily view who owes whom what. Once your debts have been settled, hit the big Get Squared button to bring everyone’s balance back to 0.</p>
-        </article>
+
+            <div class="title-container">
+                <div class="chev-container">
+                    <i id="left" class="fas chev-select fa-arrow-left"></i> 
+                </div>
+                    <h3 class="step show step1 step-title">STEP 1</h3>
+                    <h3 class="step step2 step-title">STEP 2</h3>
+                    <h3 class="step step3 step-title">STEP 3</h3>
+                    <h3 class="step step4 step-title">STEP 4</h3>
+                <div class="chev-container">
+                    <i id="right" class="fas chev-select fa-arrow-right"></i>
+                </div>
+
+            </div>
+            <div class="slide-container">
+                
+                <div class="img-container">
+                    <img class="step-img step1" src="{% static 'calculator/images/create_house.png' %}" alt="">
+                    <img class="step-img step2" src="{% static 'calculator/images/new_tran.png' %}" alt="">
+                    <img class="step-img step3" src="{% static 'calculator/images/tran_table.png' %}" alt="">
+                    <img class="step-img step4" src="{% static 'calculator/images/get_squared.png' %}" alt="">
+                </div>
+            </div>
+           
+
+            <div class="description-container">
+                <div class="step-text step step1 show">
+                    <h4 class="step-subtitle">Create Your Household</h4>
+                    <p>To get started, click <a href="{% url 'register' %}">register</a> to create an account. Choose a name for your household and add 2-6 members.</p>
+                </div>
+                <div class="step-text step step2">
+                    <h4 class="step-subtitle">Add A Transaction</h4>
+                    <p>Navigate to the transaction page and fill in the details of a purchase made by a member of your group.</p>            
+                </div>
+                <div class="step-text step step3">
+                    <h4 class="step step3 step-subtitle">View/Edit</h4>
+                    <p>Once an item has been added, use the transaction table to toggle through your complete transaction history. Unsettled transactions can be deleted or edited. The balances tab shows how much each member has either overpaid or underpaid.</p>
+                </div>
+                <div class="step-text step step4">
+                    <h4 class="step-subtitle">Get Squared</h4>
+                    <p>Easily view who owes whom what. Once your debts have been settled, hit the big Get Squared button to bring everyone’s balance back to 0.</p>
+                </div>
+            </div>
+            
         {% if not user.is_authenticated %}
             <a class="btn" href="{% url 'register' %}">Get Started!</a>
         {% endif %}
     </section>
-    
 </main>
 {% endblock %}
