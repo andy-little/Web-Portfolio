@@ -43,11 +43,17 @@ img {
         .bold {
             font-weight: 500;
         }
+        &-title, &-subtitle, &-text {
+            max-width: 44rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
 
 
 
     .start {
+        position: relative;
         p, h1, h2, h3, h4, a, a:visited {
             color: $grey;
         }
@@ -139,10 +145,7 @@ img {
 
     }
 
-    .slide-container {
-        position: relative;
-        //padding: 0 6vw;
-    }
+    
     .img-container {
         position: relative;
         display: block;
@@ -232,10 +235,12 @@ img {
 
 
     //DESKTOP
-    @media screen and (min-width: 52em) { //was 52em
+    @media screen and (min-width: 53em) { //was 52em
         p {
             font-size: 1.1rem;
         }
+
+        
 
         /* section {
             
@@ -243,13 +248,7 @@ img {
             
         } */
 
-       /*  .start {
-            
-            &-title {
-                margin-bottom: 0;
-            }
-           
-        } */
+         
         .welcome {
             display: grid;
             grid-template-columns: minmax(1em, auto) fit-content(46em) minmax(1em, auto);
@@ -277,13 +276,13 @@ img {
 
         }
         .start {
-           /*  display: grid;
-            grid-template-columns: 1fr repeat(9, fit-content(5em)) 1fr;
-            grid-template-rows: repeat(3, auto);
+            display: grid;
+            grid-template-columns: minmax(4em, 1fr) minmax(21rem, 38rem) minmax(12rem, 25rem) minmax(4em, 1fr);
+            grid-template-rows: repeat(2, auto);
             gap: 3em;
- */
+ 
             //background image
-            &-bg {
+         /*    &-bg {
                 width: 100%;
                 background-image: url(../images/bg_square_ow.png);// CHANGE IN PRODUCTION
                 grid-column: 5 / -1;
@@ -293,33 +292,76 @@ img {
                 background-repeat: no-repeat;
                 z-index: -100;
                 
+            } */
+             .title-container {
+                position: static;
             }
-            .step-1, .step-3, .start-title {
-                grid-column: 2 / span 4;
-            }        
-            .step-2, .step-4 {
-                grid-column: 7 / span 4;
+
+            .chev-container {
+                position: absolute;
+            
+                &-left {
+                    top: 50%;
+                    left: 2vw;
+                }
+                &-right {
+                    top: 50%;
+                    right: 2vw;
+                    
+                }
             }
-            .step-1, .step-2 {
-                grid-row: 2;
-            }        
-            .step-3, .step-4 {
-                grid-row: 3;
-            }        
             &-title {
+                grid-column: 2;
                 grid-row: 1;
+                margin: .7em 0 .5em;
             }
-            //adds a little space to the center
-            &-space {
-                grid-column: 6;
-                grid-row: 1 / span -1;
-                width: 2rem;
+
+            .step {
+                width: 100%;
+                max-width: 30rem;
+                
+
+                &-title {
+                    display: none;
+                }
+
             }
+            .step1{
+                .step-subtitle::before {
+                    content: '1. ';
+                }
+            }
+            .step2{
+                .step-subtitle::before {
+                    content: '2. ';
+                }
+            }
+            .step3
+            {
+                .step-subtitle::before {
+                    content: '3. ';
+                }
+            }
+            .step4
+            {
+                .step-subtitle::before {
+                    content: '4. ';
+                }
+            }
+            
+
+            .img-container {
+                grid-column: 2;
+                grid-row: 2;
+            }
+            .description-container {
+                grid-column: 3;
+                grid-row: 2;
+                
+            }
+            
+           
         }
     }
 
-
 }
-
-
-

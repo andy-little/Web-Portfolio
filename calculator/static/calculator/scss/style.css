@@ -286,7 +286,7 @@ button.secondary:hover, button.secondary:focus, button.secondary:active {
 }
 
 section {
-  padding: 40px 18px 60px 18px;
+  padding: 2.5em 1.125em 3.75em 1.125em;
 }
 
 section.new_tran {
@@ -919,7 +919,14 @@ img {
   font-weight: 500;
 }
 
+.index .welcome-title, .index .welcome-subtitle, .index .welcome-text {
+  max-width: 44rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .index .start {
+  position: relative;
   background-color: rgba(5, 8, 44, 0.9);
 }
 
@@ -1015,10 +1022,6 @@ img {
           animation-play-state: paused;
 }
 
-.index .slide-container {
-  position: relative;
-}
-
 .index .img-container {
   position: relative;
   display: block;
@@ -1110,19 +1113,12 @@ img {
   right: 0;
 }
 
-@media screen and (min-width: 52em) {
+@media screen and (min-width: 53em) {
   .index {
     /* section {
             
             padding: 40px 0 60px; 
             
-        } */
-    /*  .start {
-            
-            &-title {
-                margin-bottom: 0;
-            }
-           
         } */
   }
   .index p {
@@ -1162,49 +1158,76 @@ img {
     grid-row: 3;
   }
   .index .start {
-    /*  display: grid;
-            grid-template-columns: 1fr repeat(9, fit-content(5em)) 1fr;
-            grid-template-rows: repeat(3, auto);
-            gap: 3em;
- */
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: minmax(4em, 1fr) minmax(21rem, 38rem) minmax(12rem, 25rem) minmax(4em, 1fr);
+        grid-template-columns: minmax(4em, 1fr) minmax(21rem, 38rem) minmax(12rem, 25rem) minmax(4em, 1fr);
+    -ms-grid-rows: (auto)[2];
+        grid-template-rows: repeat(2, auto);
+    gap: 3em;
+    /*    &-bg {
+                width: 100%;
+                background-image: url(../images/bg_square_ow.png);// CHANGE IN PRODUCTION
+                grid-column: 5 / -1;
+                grid-row: 1 / -1;
+                background-position: right;
+                background-size: contain;
+                background-repeat: no-repeat;
+                z-index: -100;
+                
+            } */
   }
-  .index .start-bg {
-    width: 100%;
-    background-image: url(../images/bg_square_ow.png);
-    grid-column: 5 / -1;
-    grid-row: 1 / -1;
-    background-position: right;
-    background-size: contain;
-    background-repeat: no-repeat;
-    z-index: -100;
+  .index .start .title-container {
+    position: static;
   }
-  .index .start .step-1, .index .start .step-3, .index .start .start-title {
+  .index .start .chev-container {
+    position: absolute;
+  }
+  .index .start .chev-container-left {
+    top: 50%;
+    left: 2vw;
+  }
+  .index .start .chev-container-right {
+    top: 50%;
+    right: 2vw;
+  }
+  .index .start-title {
     -ms-grid-column: 2;
-    -ms-grid-column-span: 4;
-    grid-column: 2 / span 4;
+    grid-column: 2;
+    -ms-grid-row: 1;
+    grid-row: 1;
+    margin: .7em 0 .5em;
   }
-  .index .start .step-2, .index .start .step-4 {
-    -ms-grid-column: 7;
-    -ms-grid-column-span: 4;
-    grid-column: 7 / span 4;
+  .index .start .step {
+    width: 100%;
+    max-width: 30rem;
   }
-  .index .start .step-1, .index .start .step-2 {
+  .index .start .step-title {
+    display: none;
+  }
+  .index .start .step1 .step-subtitle::before {
+    content: '1. ';
+  }
+  .index .start .step2 .step-subtitle::before {
+    content: '2. ';
+  }
+  .index .start .step3 .step-subtitle::before {
+    content: '3. ';
+  }
+  .index .start .step4 .step-subtitle::before {
+    content: '4. ';
+  }
+  .index .start .img-container {
+    -ms-grid-column: 2;
+    grid-column: 2;
     -ms-grid-row: 2;
     grid-row: 2;
   }
-  .index .start .step-3, .index .start .step-4 {
-    -ms-grid-row: 3;
-    grid-row: 3;
-  }
-  .index .start-title {
-    -ms-grid-row: 1;
-    grid-row: 1;
-  }
-  .index .start-space {
-    -ms-grid-column: 6;
-    grid-column: 6;
-    grid-row: 1 / span -1;
-    width: 2rem;
+  .index .start .description-container {
+    -ms-grid-column: 3;
+    grid-column: 3;
+    -ms-grid-row: 2;
+    grid-row: 2;
   }
 }
 /*# sourceMappingURL=style.css.map */
