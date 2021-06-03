@@ -48,7 +48,7 @@
                     <p>Navigate to the transaction page and fill in the details of a purchase made by a member of your group.</p>            
                 </div>
                 <div class="step-text step step3">
-                    <h4 class="step step3 step-subtitle">View/Edit</h4>
+                    <h4 class="step-subtitle">View/Edit</h4>
                     <p>Once an item has been added, use the transaction table to toggle through your complete transaction history. Unsettled transactions can be deleted or edited. The balances tab shows how much each member has either overpaid or underpaid.</p>
                 </div>
                 <div class="step-text step step4">
@@ -57,9 +57,9 @@
                 </div>
             </div>
             
-        {% if not user.is_authenticated %}
+      <!--   {% if not user.is_authenticated %}
             <a class="btn" href="{% url 'register' %}">Get Started!</a>
-        {% endif %}
+        {% endif %} -->
     </section>
 </main>
 {% endblock %}
