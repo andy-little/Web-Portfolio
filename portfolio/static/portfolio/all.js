@@ -1,3 +1,5 @@
+import {data} from './data.js'
+
 document.addEventListener('DOMContentLoaded', () => {
 
     //Toggle between hamburger and close symbol
@@ -5,13 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobLinks = document.querySelector('.mob-links');
     const overlay = document.querySelector('.overlay');
     const closeMobLinks = document.querySelectorAll('.mob-links-close')
-
+    
+    console.log(`${static_url}portfolio/images/logo.png`);
+    
     hamBurger.onclick = () => {
         hamBurger.classList.toggle('open');
         mobLinks.classList.toggle('open');
         overlay.classList.toggle('open');
     }
-
+    
     closeMobLinks.forEach((btn) => {
         btn.onclick = () => {
             mobLinks.classList.remove('open')
@@ -19,6 +23,52 @@ document.addEventListener('DOMContentLoaded', () => {
             overlay.classList.remove('open')
         }
     });
+    
+/*     function loadProject(project) {
+        let csrftoken = getCookie('csrftoken');
+        fetch(`/project/${project}`, {
+            method: 'GET',
+            headers: { "X-CSRFToken": csrftoken },
+        })
+        .then(response => response.json())
+        .then(result => {
+            //do something with object here
+            console.log(result)
+        }).catch(error => console.log(error));
+        
+    } */
+
+    const titleEl = document.querySelector('.project-title-text');
+    const subtitleEl = document.querySelector('.project-subtitle');
+    const textEl = document.querySelector('.project-text');
+    const imgEl = document.querySelector('.project-laptop');
+    const btn = document.querySelector('.site');
+    let index = 0;
+    function loadProject(direction){
+        if(direction === 'next'){
+            index++;
+            if(index >= data.length){
+                index = 0;
+            }
+        }else{
+            index--;
+            if (index < 0) {
+                index = data.length - 1;
+            }
+        }
+        const {code, img, site, subtitle, text, title} = data[index];
+        console.log(subtitle);
+        titleEl.textContent = title;
+        subtitleEl.textContent = subtitle;
+        textEl.innerHTML = text;
+        imgEl.src = img;
+        btn.href = site;
+        //console.log(data[index]);
+    }
+    const nextProject = document.querySelector('.next-project');
+    const prevProject = document.querySelector('.prev-project')
+    nextProject.onclick = () => loadProject('next');
+    prevProject.onclick = () => loadProject('prev');
     
 
 });
@@ -48,3 +98,26 @@ window.onload = () => {
 
     });
 };
+
+
+
+
+
+/* 
+
+// handle csrf token for fetch()
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        let cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            let cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+} */

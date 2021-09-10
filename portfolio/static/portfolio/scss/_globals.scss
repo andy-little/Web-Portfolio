@@ -1,95 +1,113 @@
-
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
-*, *::after, *::before {
-    box-sizing: border-box;
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
 }
-a, a:hover, a:visited {
-    
-    text-decoration: none;
-    color: inherit;
-    
+a,
+a:hover,
+a:visited {
+  text-decoration: none;
+  color: inherit;
 }
 
 body {
-    margin: 0;
-    line-height: 1.5;
-    font-family: $para;
-
+  margin: 0;
+  line-height: 1.5;
+  font-family: $para;
 }
-h1, h2, h3, h4, p {
-    margin: 0;
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
 }
-h1, h2, h3, h4 {
-    line-height: 1.2;
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.2;
 }
-h1,h2,h3 {
-    font-family: $title;
+h1,
+h2,
+h3 {
+  font-family: $title;
 }
 
 image {
-    max-width: 100%;
-    display: block;
+  max-width: 100%;
+  display: block;
 }
 .btn {
-    text-align: center;
-    display: inline-block;
-    width: 9em;
-    max-height: 2.4rem;
-    padding: .8em 0;
-    color: white !important;
-    background: $accent;
-    font-weight: 700;
-    font-size: .8rem;
-    text-transform: uppercase;
-    border-radius: .3em;
-    border: none;
-    transition: transform 200ms ease-in-out, box-shadow 200ms ease-in-out;
-    box-shadow: 4px 4px 4px rgba(73, 68, 68, .8);
+  text-align: center;
+  display: inline-block;
+  width: 9em;
+  max-height: 2.4rem;
+  padding: 0.8em 0;
+  color: white !important;
+  background: $accent;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  border-radius: 0.3em;
+  border: none;
+  transition: transform 200ms ease-in-out, box-shadow 200ms ease-in-out;
+  box-shadow: 4px 4px 4px rgba(73, 68, 68, 0.8);
 
-    &:hover, &:focus {
-        box-shadow: 1px 1px 3px rgba(73, 68, 68, .7);
-        transform: scale(.97);
-        cursor: pointer;
-    }
+  &:hover,
+  &:focus {
+    box-shadow: 1px 1px 3px rgba(73, 68, 68, 0.7);
+    transform: scale(0.97);
+    cursor: pointer;
+  }
 }
 .marg-b {
-    margin-bottom: 6vw;
-    margin-bottom: clamp(2.5rem, 16vw, 10rem)
+  margin-bottom: 6vw;
+  margin-bottom: clamp(2.5rem, 16vw, 10rem);
 }
 
 // Section title has to be placed in a grid and will take up the top row
 .section-title {
-    font-size: 4rem; // fallback
-    font-size: clamp(2.5rem, 10vw, 4rem);
+  font-size: 4rem; // fallback
+  font-size: clamp(2.5rem, 10vw, 4rem);
+  grid-row: 1;
+  grid-column: 3 / -3; //might need to change for mob
+  color: $primary;
 
-    grid-row: 1;
-    grid-column: 3 / -3; //might need to change for mob
-    color: $primary;
+  &.secondary {
+    grid-column: 2 / -3;
+    color: $secondary;
     &::after {
-        content: " ";
-        display: block;
-        width: 100%;
-        height: 5px;
-        border-radius: 2px;
-        background: $primary;
-        color: $primary;
-        margin-bottom: 4vw; // fallback
-        margin-bottom: clamp(.5rem, 6vw, 3rem)
+      background-color: $secondary;
     }
+  }
+
+  &::after {
+    content: " ";
+    display: block;
+    width: 100%;
+    height: 5px;
+    border-radius: 2px;
+    background: $primary;
+    color: $primary;
+    margin-bottom: 4vw; // fallback
+    margin-bottom: clamp(0.5rem, 6vw, 3rem);
+  }
 }
 .text-accent {
-    color: $accent;
+  color: $accent;
 }
 
 @media screen and (max-width: $break-point) {
-    .hide-mob {
-        display: none !important;
-    } 
+  .hide-mob {
+    display: none !important;
+  }
 }
 @media screen and (min-width: $break-point) {
-    .hide-desk {
-        display: none !important;
-    } 
+  .hide-desk {
+    display: none !important;
+  }
 }

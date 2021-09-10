@@ -7,7 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'portfolio/scss/styles.css'%}">
     <link rel="stylesheet" href="{% static 'portfolio/scss/all.css' %}">
-    <script src="{% static 'portfolio/all.js' %}"></script>
+    <script>
+        const static_url = "{% get_static_prefix %}"; 
+    </script>
+    <script type='module' src="{% static 'portfolio/all.js' %}"></script>
     <title>Andy Little Portfolio</title>
 
     <meta name="description" content="Andy Little is a a Full-Stack web developer in London, specialising in building web apps using Python - Django, JavaScript, HTML and CSS.">
@@ -22,6 +25,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
 
 </head>
@@ -72,14 +76,16 @@
         </header>
 
 
-        <!--ANYONE CAN LEARN-->
-        <section id="projects" class="project right-left guitar marg-b">
+        <!--PROJECTS-->
+        <section id="projects" class="project <!-- project-personal --> right-left guitar marg-b">
             <h1 class="section-title">Projects</h1>
             <div class="project-btns">
-                <a class="btn" target="_blank" href="https://www.anyonecanlearntoplayguitar.com">Live Website</a>
-                <a class="btn" target="_blank" href="https://github.com/andy-little/AnyoneCanLearnToPlayGuitar">Source Code</a>
+                <a class="btn site" target="_blank" href="https://www.anyonecanlearntoplayguitar.com">Live Website</a>
+                <a class="btn code" target="_blank" href="https://github.com/andy-little/AnyoneCanLearnToPlayGuitar">ALL PROJECTS</a>
             </div>
-            <h3 class="project-title">learn to play guitar</h3>
+            
+            <h3 class="project-title"><i class="fas fa-chevron-left project-title-chevron prev-project"></i><span class="project-title-text">learn to play guitar</span><i class="fas fa-chevron-right project-title-chevron next-project"></i></h3>
+            
             <div class="project-background"></div>
         
                 <h4 class="project-subtitle">In my time as a teacher I wrote a book. Here it is implemented as a website.</h4>
@@ -95,70 +101,13 @@
                 </div>
                     
 
-            <img class="project-laptop show guitar" data-id="g1" src="{% static 'portfolio/images/lapmob-gtr-1.png'%}" alt="laptop">
+            <img class="project-laptop show guitar" src="{% static 'portfolio/images/lapmob-gtr-1.png'%}" alt="laptop">
         </section>
 
-        <!--MONEY 2-->
-
-        <section class="project left-right money marg-b">
-            <div class="project-btns">
-                <a class="btn" target="_blank" href="/money">Live Website</a>
-                <a class="btn" target="_blank" href="https://github.com/andy-little/Web-Portfolio/tree/main/calculator">Source Code</a>
-            </div>
-            <h3 class="project-title">money squared</h3>
-            <div class="project-background"></div>
-        
-                <h4 class="project-subtitle">An app I built for managing household bills and other shared costs.</h4>
-                <div class="project-text">Users first create a household. Members of this household can add their transactions to the group. Members can also:
-                    <ul>
-                        <li>View their entire transaction history</li>
-                        <li>Easily see who owes whom what</li>
-                        <li>Settle debts</li>
-                        <li>Edit/delete transactions not yet settled</li>
-                    </ul>
-                    In this project I created my own paginator api which, unlike Django's, can be used asynchronously.
-                </div>
-                    
-
-            <img class="project-laptop show money" data-id="g1" src="{% static 'portfolio/images/lapmob-money-1.png'%}" alt="laptop">
-        </section>
-
-        <!--ABOUT ME-->
-        <section class="about right-left marg-b">
-            <h1 id="about" class="section-title">About Me</h1>
-            <h3 class="about-title">technical</h3>
-            <div class="about-background"></div>
-                <div class="about-text"><strong>HARVARD’S CS50</strong><br>
-                    Studied C, data structures, databases, algorithms, problem solving and the art of programming. 
-                    <br><br><strong>CS50 WEB</strong><br>
-                    Learnt to build web apps in Django, single page user interfaces, APIs. Touched on version control, testing, scalability and security.
-                    <br><br><strong>KEY SKILLS</strong>
-                    <ul>
-                        <table>
-                            <tr>
-                                <td class="about-table-c1">
-                                    <li>Python</li>
-                                    <li>Vanilla Javascript</li>
-                                    <li>CSS / SCSS</li>
-                                    <li>SQL</li>
-                                    <li>Git Hub</li>
-                                </td>
-                                <td class="about-table-c2">
-                                    <li>Django</li>
-                                    <li>Flask</li>
-                                    <li>BASH</li>
-                                    <li>Figma</li>
-                                </td>
-                            </tr>
-                        </table>
-                    </ul>
-                </div>
-            <img class="about-img" src="{% static 'portfolio/images/about.jpg' %}" alt="photo of workspace with computer">
-            <a target="_blank" class="btn about-btn" href="{% static 'portfolio/pdf/CV.pdf'%}">DOWNLOAD CV</a>
-        </section>
-        
+       
         <!--Personal-->
         <section class="about left-right marg-b">
+            <h1 id="about" class="section-title secondary">About Me</h1>
             <h3 class="about-title">personal</h3>
             <div class="about-background"></div>
                 <div class="about-text">
@@ -168,6 +117,41 @@
                     <br><br>
                 </div>
             <img class="about-img" src="{% static 'portfolio/images/about-gtr.jpg'%}" alt="andy on stage with band at pizza express jazz club">
+        </section>
+
+        <!--ABOUT ME-->
+        <section class="about right-left marg-b">
+            
+            <h3 class="about-title">technical</h3>
+            <div class="about-background"></div>
+            <div class="about-text"><strong>HARVARD’S CS50</strong><br>
+                Studied C, data structures, databases, algorithms, problem solving and the art of programming.
+                <br><br><strong>CS50 WEB</strong><br>
+                Learnt to build web apps in Django, single page user interfaces, APIs. Touched on version control, testing,
+                scalability and security.
+                <br><br><strong>KEY SKILLS</strong>
+                <ul>
+                    <table>
+                        <tr>
+                            <td class="about-table-c1">
+                                <li>Python</li>
+                                <li>Vanilla Javascript</li>
+                                <li>CSS / SCSS</li>
+                                <li>SQL</li>
+                                <li>Git Hub</li>
+                            </td>
+                            <td class="about-table-c2">
+                                <li>Django</li>
+                                <li>Flask</li>
+                                <li>BASH</li>
+                                <li>Figma</li>
+                            </td>
+                        </tr>
+                    </table>
+                </ul>
+            </div>
+            <img class="about-img" src="{% static 'portfolio/images/about.jpg' %}" alt="photo of workspace with computer">
+            <a target="_blank" class="btn about-btn" href="{% static 'portfolio/pdf/CV.pdf'%}">DOWNLOAD CV</a>
         </section>
 
         <!--CONTACT-->

@@ -1167,7 +1167,7 @@ img {
     gap: 3em;
     /*    &-bg {
                 width: 100%;
-                background-image: url(../images/bg_square_ow.png);// CHANGE IN PRODUCTION
+                background-image: url(../images/bg_square_ow.png);// 
                 grid-column: 5 / -1;
                 grid-row: 1 / -1;
                 background-position: right;

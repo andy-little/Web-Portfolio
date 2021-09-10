@@ -2,14 +2,18 @@ from django.shortcuts import render
 import smtplib
 import os
 import json
+from django.http import JsonResponse
+from .projectdata import data
+
 
 with open('/etc/config.json') as config_file:
     config = json.load(config_file)
 
-EMAIL_ADDRESS = config.get('EMAIL_USER') 
+EMAIL_ADDRESS = config.get('EMAIL_USER')
 EMAIL_PASS = config.get('EMAIL_PASS')
 
 # Create your views here.
+
 
 def home(request):
     if request.method == 'POST':
@@ -25,6 +29,14 @@ def home(request):
             body = contents
 
             msg = f'Subject: {subject}\n\n{body}'
-            smtp.sendmail(EMAIL_ADDRESS, 'andy.little@hotmail.co.uk', f'{msg}\nSender: {sender}')
+            smtp.sendmail(EMAIL_ADDRESS, 'andy.little@hotmail.co.uk',
+                          f'{msg}\nSender: {sender}')
 
     return render(request, 'portfolio/index.html')
+
+
+def project(request, project):
+    if request.method == 'GET':
+        item = data[project]
+        # print(item)
+        return JsonResponse(item)
