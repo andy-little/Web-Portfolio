@@ -24,27 +24,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
-/*     function loadProject(project) {
-        let csrftoken = getCookie('csrftoken');
-        fetch(`/project/${project}`, {
-            method: 'GET',
-            headers: { "X-CSRFToken": csrftoken },
-        })
-        .then(response => response.json())
-        .then(result => {
-            //do something with object here
-            console.log(result)
-        }).catch(error => console.log(error));
-        
-    } */
-
+    
     const titleEl = document.querySelector('.project-title-text');
     const subtitleEl = document.querySelector('.project-subtitle');
     const textEl = document.querySelector('.project-text');
     const imgEl = document.querySelector('.project-laptop');
     const btn = document.querySelector('.site');
+    const animatedItems = document.querySelectorAll('.move');
     let index = 0;
-    function loadProject(direction){
+    function loadProject(){
+        const {code, img, site, subtitle, text, title} = data[index];
+        titleEl.textContent = title;
+        subtitleEl.textContent = subtitle;
+        textEl.innerHTML = text;
+        imgEl.src = img;
+        btn.href = site;
+    }
+    function changeProject(direction){
         if(direction === 'next'){
             index++;
             if(index >= data.length){
@@ -56,30 +52,30 @@ document.addEventListener('DOMContentLoaded', () => {
                 index = data.length - 1;
             }
         }
-        const {code, img, site, subtitle, text, title} = data[index];
-        console.log(subtitle);
-        titleEl.textContent = title;
-        subtitleEl.textContent = subtitle;
-        textEl.innerHTML = text;
-        imgEl.src = img;
-        btn.href = site;
-        //console.log(data[index]);
+        animatedItems.forEach((item)=>{
+            item.style.transform =  'translateX(-100vw)';
+            setTimeout(()=>{
+                item.style.transform =  'translateX(0)';
+            },150);
+        });
+        loadProject(); 
     }
     const nextProject = document.querySelector('.next-project');
     const prevProject = document.querySelector('.prev-project')
-    nextProject.onclick = () => loadProject('next');
-    prevProject.onclick = () => loadProject('prev');
+    nextProject.onclick = () => changeProject('next');
+    prevProject.onclick = () => changeProject('prev');
+    loadProject();
     
-
+    
 });
 
 window.onload = () => {
-
+    
     //Replace desktop menu with minimize sign when scrolling past header 
     const deskMenu = document.querySelector('.desk-menu');
-
     
-
+    
+    
     window.addEventListener('scroll', () => {
         //AND hide minimise sign and menu when at contact section
         const contact = document.querySelector('#contact');
@@ -95,10 +91,23 @@ window.onload = () => {
         } else if (window.pageYOffset < contactPosition) {
             deskMenu.classList.remove('close');
         }
-
+        
     });
 };
 
+/*     function loadProject(project) {
+        let csrftoken = getCookie('csrftoken');
+        fetch(`/project/${project}`, {
+            method: 'GET',
+            headers: { "X-CSRFToken": csrftoken },
+        })
+        .then(response => response.json())
+        .then(result => {
+            //do something with object here
+            console.log(result)
+        }).catch(error => console.log(error));
+        
+    } */
 
 
 

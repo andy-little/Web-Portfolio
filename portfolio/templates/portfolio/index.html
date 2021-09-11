@@ -69,7 +69,7 @@
             <img class="hero-photo" src="{% static 'portfolio/images/andy.png'%}" alt="photo of Andy">
             <div class="hero-hi">
                 <h3 class="hero-title">Hi!</h3>
-                <p class="hero-text">I’m Andy, a Full-Stack web developer in London. I specialise in building web apps using <span class="text-accent">Python</span> - <span class="text-accent">Django</span>, <span class="text-accent">JavaScript</span>, <span class="text-accent">HTML</span> and <span class="text-accent">CSS</span>. You can view the code for this site below.</p>
+                <p class="hero-text">I’m Andy, a Full-Stack web developer in London. I specialise in building web apps using <span class="text-accent">Javascript - React</span>, <span class="text-accent">Python - Django</span> and <span class="text-accent">CSS</span>. You can view the code for this site below.</p>
                 <div class="hero-space"></div>
                 <a class="hero-btn btn" target="_blank" href="https://github.com/andy-little/Web-Portfolio/tree/main/portfolio">Source Code</a>
             </div>
@@ -78,30 +78,30 @@
 
         <!--PROJECTS-->
         <section id="projects" class="project <!-- project-personal --> right-left guitar marg-b">
-            <h1 class="section-title">Projects</h1>
+            <h1 class="section-title"><a class="all-projects-link" href="#">Projects</a></h1>
             <div class="project-btns">
                 <a class="btn site" target="_blank" href="https://www.anyonecanlearntoplayguitar.com">Live Website</a>
                 <a class="btn code" target="_blank" href="https://github.com/andy-little/AnyoneCanLearnToPlayGuitar">ALL PROJECTS</a>
             </div>
             
-            <h3 class="project-title"><i class="fas fa-chevron-left project-title-chevron prev-project"></i><span class="project-title-text">learn to play guitar</span><i class="fas fa-chevron-right project-title-chevron next-project"></i></h3>
+            <h3 class="project-title"><i class="fas fa-chevron-left project-title-chevron prev-project"></i><span class="project-title-text move">learn to play guitar</span><i class="fas fa-chevron-right project-title-chevron next-project"></i></h3>
             
             <div class="project-background"></div>
         
-                <h4 class="project-subtitle">In my time as a teacher I wrote a book. Here it is implemented as a website.</h4>
-                <div class="project-text">This was a front-end heavy project where I focused on responsive design.
-                    Functionality of the site includes:
+                <h4 class="project-subtitle move">In my time as a teacher I wrote a book. Here it is implemented as a website.</h4>
+                <div class="project-text move">
+                    I used React and pure css to create this project. I used the context API and useReducer to keep the code clean and maintainable.
                     <ul>
-                        <li>Personal account creation</li>
-                        <li>Secure login</li>
-                        <li>Password management via email</li>
-                        <li>Track and save progress</li>
-                        <li>Dynamically styled audio player</li>
+                        <li>search hacker news database</li>
+                        <li>easily hide results</li>
+                        <li>fun pagination</li>
+                        <li>clean and easy to use UI</li>
+
                     </ul>
                 </div>
                     
 
-            <img class="project-laptop show guitar" src="{% static 'portfolio/images/lapmob-gtr-1.png'%}" alt="laptop">
+            <img class="project-laptop move" src="{% static 'portfolio/images/lapmob-gtr-1.png'%}" alt="laptop">
         </section>
 
        

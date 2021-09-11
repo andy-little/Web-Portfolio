@@ -24,5 +24,13 @@ export const data = [
         text: "TODO",
         img: `${static_url}${img}lapmob-jaffa.png`
     },
+    {
+        site: "https://google-style-hacker-news.netlify.app/",
+        code: "TODO",
+        title: "hacker news",
+        subtitle: "Using hacker news api to create a google style search engine",
+        text: "I used React and pure css to create this project. I used the context API and useReducer to keep the code clean and maintainable. <ul><li>search hacker news database</li><li>easily hide results</li><li>fun pagination</li><li>clean and easy to use UI</li></ul>",
+        img: `${static_url}${img}hacker-news.png`
+    },
 
 ]

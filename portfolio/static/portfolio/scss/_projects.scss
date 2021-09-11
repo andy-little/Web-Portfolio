@@ -4,6 +4,7 @@
 
 //DESKTOP
 .project {
+  --transform: transform 150ms ease-in-out;
   display: grid;
   grid-template-columns: 1fr repeat(10, fit-content(90px)) 1fr;
   grid-template-rows: auto auto 2.2fr 3fr 0.5fr;
@@ -18,18 +19,22 @@
   &-btns {
     grid-row: 2;
     grid-column: 3 / span 4;
-    //justify-self: center;
   }
   &-title {
     grid-row: 2;
     grid-column: 8 / span 4;
-    /* align-self: end; */
     line-height: 1;
     font-size: 1.7rem;
     font-size: clamp(1.5rem, 3vw, 2rem);
     display: flex;
     align-items: center;
     justify-content: space-around;
+
+    &-text {
+      transition: var(--transform);
+      width: 70%;
+      text-align: center;
+    }
 
     &-chevron {
       color: $accent;
@@ -45,6 +50,7 @@
     }
   }
   &-subtitle {
+    transition: var(--transform);
     align-self: center;
     grid-row: 3;
     grid-column: 3 / span 4;
@@ -57,6 +63,7 @@
     font-size: clamp(1.4rem, 2.5vw, 1.75rem);
   }
   &-text {
+    transition: var(--transform);
     padding: 2em 0 2em;
     align-self: center;
     grid-row: 3 / span 2;
@@ -66,14 +73,10 @@
     font-size: clamp(1.1rem, 2vw, 1.3rem);
   }
   &-laptop {
+    transition: var(--transform);
     width: 100%;
     grid-row: 4 / span 2;
     grid-column: 2 / span 6;
-    opacity: 0;
-    transition: opacity 300ms ease-in-out;
-    &.show {
-      opacity: 1;
-    }
   }
 
   &-background {
@@ -172,5 +175,13 @@
     &-btns {
       grid-column: 7 / span 4;
     }
+  }
+}
+//Project link
+.all-projects-link {
+  transition: opacity 0.3s ease-in-out;
+  &:hover,
+  &:focus {
+    opacity: 0.6;
   }
 }
