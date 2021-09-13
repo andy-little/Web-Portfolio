@@ -598,15 +598,13 @@ image {
   grid-column: 7 / span 4;
 }
 
-.all-projects-link {
-  -webkit-transition: color 0.3s ease-in-out;
+/* .all-projects-link {
   transition: color 0.3s ease-in-out;
-}
-
-.all-projects-link:hover, .all-projects-link:focus {
-  color: #f39422;
-}
-
+  &:hover,
+  &:focus {
+    color: $accent;
+  }
+} */
 header {
   position: relative;
   display: -ms-grid;
