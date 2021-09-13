@@ -38,13 +38,13 @@ document.addEventListener('DOMContentLoaded', () => {
     
     function loadProject(){
         const {code, img, site:url, subtitle, text, title} = data[index];
+        imgEl.src = img;
+        btn.href = url;
+        codeBtn.href = code;
         titleEl.textContent = title;
         titleEl.href = url;
         subtitleEl.textContent = subtitle;
         textEl.innerHTML = text;
-        imgEl.src = img;
-        btn.href = url;
-        codeBtn.href = code;
     }
     function changeProject(direction){
         clearInterval(interval);
