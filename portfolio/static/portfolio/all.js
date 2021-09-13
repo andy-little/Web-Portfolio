@@ -84,7 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevProject = document.querySelector('.prev-project')
     nextProject.onclick = () => changeProject('next');
     prevProject.onclick = () => changeProject('prev');
-    loadProject();
     interval = setInterval(changeProject, slideDuration);
     
     
