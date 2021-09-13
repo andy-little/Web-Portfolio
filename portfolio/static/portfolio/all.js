@@ -33,14 +33,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const animatedItems = document.querySelectorAll('.move');
     let index = 0;
     function loadProject(){
-        const {code, img, site, subtitle, text, title} = data[index];
+        const {code, img, site:url, subtitle, text, title} = data[index];
         titleEl.textContent = title;
+        titleEl.href = url;
         subtitleEl.textContent = subtitle;
         textEl.innerHTML = text;
         imgEl.src = img;
-        btn.href = site;
+        btn.href = url;
     }
     function changeProject(direction){
+        let step1 = 'translateX(100vw)';
+        let step2 = 'translateX(-100vw)';
         if(direction === 'next'){
             index++;
             if(index >= data.length){
@@ -48,17 +51,28 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }else{
             index--;
+            //swaps values so that animation is reversed
+            [step1, step2] =[step2, step1];
             if (index < 0) {
                 index = data.length - 1;
             }
         }
         animatedItems.forEach((item)=>{
-            item.style.transform =  'translateX(-100vw)';
+            item.style.transform =  step1;
             setTimeout(()=>{
-                item.style.transform =  'translateX(0)';
-            },150);
+                loadProject(); 
+                item.style.opacity =  0;
+                item.style.transform =  step2;
+            },100);
+            
+            setTimeout(()=>{
+                item.style.opacity =  1;
+                item.style.transform = 'translateX(0vw)';
+            },200);
+
+        
         });
-        loadProject(); 
+        
     }
     const nextProject = document.querySelector('.next-project');
     const prevProject = document.querySelector('.prev-project')

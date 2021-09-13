@@ -363,7 +363,7 @@ image {
 }
 
 .project {
-  --transform: transform 150ms ease-in-out;
+  --transform: transform 100ms ease-in-out;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr (fit-content(90px))[10] 1fr;
@@ -599,12 +599,12 @@ image {
 }
 
 .all-projects-link {
-  -webkit-transition: opacity 0.3s ease-in-out;
-  transition: opacity 0.3s ease-in-out;
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
 }
 
 .all-projects-link:hover, .all-projects-link:focus {
-  opacity: 0.6;
+  color: #F39422;
 }
 
 header {

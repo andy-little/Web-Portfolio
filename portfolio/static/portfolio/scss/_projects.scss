@@ -4,7 +4,7 @@
 
 //DESKTOP
 .project {
-  --transform: transform 150ms ease-in-out;
+  --transform: transform 100ms ease-in-out;
   display: grid;
   grid-template-columns: 1fr repeat(10, fit-content(90px)) 1fr;
   grid-template-rows: auto auto 2.2fr 3fr 0.5fr;
@@ -179,9 +179,9 @@
 }
 //Project link
 .all-projects-link {
-  transition: opacity 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
   &:hover,
   &:focus {
-    opacity: 0.6;
+    color: $accent;
   }
 }
