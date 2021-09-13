@@ -7,6 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'portfolio/scss/styles.css'%}">
     <link rel="stylesheet" href="{% static 'portfolio/scss/all.css' %}">
+    <link rel="preload" href="{% static 'portfolio/images/lapmob-gtr-1.png' %}" as="image">
+    <link rel="preload" href="{% static 'portfolio/images/lapmob-money-1.png' %}" as="image">
+    <link rel="preload" href="{% static 'portfolio/images/lapmob-jaffa.png' %}" as="image">
+    <link rel="preload" href="{% static 'portfolio/images/hacker-news.png' %}" as="image">
+    <link rel="preload" href="{% static 'portfolio/images/night-dark.png' %}" as="image">
+    <link rel="preload" href="{% static 'portfolio/images/colour.png' %}" as="image">
     <script>
         const static_url = "{% get_static_prefix %}"; 
     </script>
@@ -87,15 +93,9 @@
             <div class="project-background"></div>
                 <h4 class="project-subtitle move">loading...</h4>
                 <div class="project-text move">
-                    This React project uses Values.js to produce a desired amount of colour swatches. When clicked the hex code is copied to your clipboard. There is also the option to generate a random colour. Since the colours are dynamic I used tinycolour2 to ensure overlaying text is always readable.
-                    <ul>
-                        <li>Uses 3rd party libraries</li>
-                        <li>Uses props and controlled inputs</li>
-                        <li>Stylised slider inputs</li>
-                        <li>Hosted with netlify</li>
-                    </ul>
+                    <p>if loading has taken more than 8 seconds please refresh your browser</p>
                 </div>
-            <img class="project-laptop move" src="{% static 'portfolio/images/lapmob-gtr-1.png'%}" alt="laptop">
+            <img class="project-laptop move" src="" alt="loading screenshot">
         </section>
 
        
