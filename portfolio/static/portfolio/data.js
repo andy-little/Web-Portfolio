@@ -18,7 +18,7 @@ export const data = [
     },
     {
         site: "https://jaffalondon.herokuapp.com",
-        code: "TODO",
+        code: "https://github.com/andy-little/jaffa",
         title: "jaffa london",
         subtitle: "A simple website I designed and created for Jaffa Digital.",
         text: "I built this site using sass and vanilla javascript. I designed the site incorporating the company styles and logos.<ul><li>Responsive design</li><li>Parallax effects with fallback</li><li>Animated cards with phone fallback</li><li>Contact form sends emails in the backend with django</li><li>Hosted with Heroku</li></ul>",
@@ -26,7 +26,7 @@ export const data = [
     },
     {
         site: "https://google-style-hacker-news.netlify.app/",
-        code: "TODO",
+        code: "https://github.com/andy-little/hacker-news",
         title: "hacker news",
         subtitle: "Using hacker news api to create a google style search engine",
         text: "I used React and pure css to create this project. I used the context API and useReducer to keep the code clean and maintainable. <ul><li>Search hacker news database</li><li>Easily hide results</li><li>Fun pagination</li><li>Clean and easy to use UI</li><li>Hosted with netlify</li></ul>",
@@ -34,7 +34,7 @@ export const data = [
     },
     {
         site: "https://light-dark-gallery.netlify.app",
-        code: "TODO",
+        code: "https://github.com/andy-little/unsplash",
         title: "light/dark gallery",
         subtitle: "Using unsplash api and React to create a light/dark UI",
         text: "Based on a React tutorial I created an interface to search for unsplash images. I then refactored the code to be more maintainable, added my touches to the project and added a stylised light/dark switch.<ul><li>Light dark toggle switch</li><li>Stores preference in local storage</li><li>Infinite scroll</li><li>Using api keys with environment variables</li><li>Modular maintainable design using context api</li></ul>",
@@ -42,7 +42,7 @@ export const data = [
     },
     {
         site: "https://tints-and-shades-genorator.netlify.app",
-        code: "TODO",
+        code: "https://github.com/andy-little/colour",
         title: "tints and shades",
         subtitle: "Produce tints and shades of a given colour",
         text: "This React project uses Values.js to produce a desired amount of colour swatches. When clicked the hex code is copied to your clipboard. There is also the option to generate a random colour. Since the colours are dynamic I used tinycolour2 to ensure overlaying text is always readable.<ul><li>Uses 3rd party libraries</li><li>Uses props and controlled inputs</li><li>Stylised slider inputs</li></ul>",

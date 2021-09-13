@@ -8,8 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const overlay = document.querySelector('.overlay');
     const closeMobLinks = document.querySelectorAll('.mob-links-close')
     
-    console.log(`${static_url}portfolio/images/logo.png`);
-    
     hamBurger.onclick = () => {
         hamBurger.classList.toggle('open');
         mobLinks.classList.toggle('open');
@@ -30,8 +28,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const textEl = document.querySelector('.project-text');
     const imgEl = document.querySelector('.project-laptop');
     const btn = document.querySelector('.site');
+    const codeBtn = document.querySelector('.code');
     const animatedItems = document.querySelectorAll('.move');
     let index = 0;
+    let interval;
+    const slideDuration = 7000;
+
+    
+    
     function loadProject(){
         const {code, img, site:url, subtitle, text, title} = data[index];
         titleEl.textContent = title;
@@ -40,21 +44,23 @@ document.addEventListener('DOMContentLoaded', () => {
         textEl.innerHTML = text;
         imgEl.src = img;
         btn.href = url;
+        codeBtn.href = code;
     }
     function changeProject(direction){
+        clearInterval(interval);
         let step1 = 'translateX(100vw)';
         let step2 = 'translateX(-100vw)';
-        if(direction === 'next'){
+        if(direction === 'prev'){
+            index--;
+            if (index < 0) {
+                index = data.length - 1;
+            }
+        }else{
+            //swaps values so that animation is reversed
+            [step1, step2] =[step2, step1];
             index++;
             if(index >= data.length){
                 index = 0;
-            }
-        }else{
-            index--;
-            //swaps values so that animation is reversed
-            [step1, step2] =[step2, step1];
-            if (index < 0) {
-                index = data.length - 1;
             }
         }
         animatedItems.forEach((item)=>{
@@ -69,9 +75,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 item.style.opacity =  1;
                 item.style.transform = 'translateX(0vw)';
             },200);
-
-        
+            
         });
+        interval = setInterval(changeProject, slideDuration);
         
     }
     const nextProject = document.querySelector('.next-project');
@@ -79,6 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
     nextProject.onclick = () => changeProject('next');
     prevProject.onclick = () => changeProject('prev');
     loadProject();
+    interval = setInterval(changeProject, slideDuration);
     
     
 });

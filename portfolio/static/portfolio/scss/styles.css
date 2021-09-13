@@ -756,17 +756,17 @@ header {
   display: grid;
   -ms-grid-columns: 1fr (fit-content(90px))[10] 1fr;
       grid-template-columns: 1fr repeat(10, fit-content(90px)) 1fr;
-  -ms-grid-rows: auto auto 2.2fr 3fr .5fr;
-      grid-template-rows: auto auto 2.2fr 3fr .5fr;
+  -ms-grid-rows: auto auto 2.2fr 3fr 0.5fr;
+      grid-template-rows: auto auto 2.2fr 3fr 0.5fr;
   gap: 1em;
 }
 
 .about-title {
   -ms-grid-row: 2;
   grid-row: 2;
-  -ms-grid-column: 8;
+  -ms-grid-column: 7;
   -ms-grid-column-span: 4;
-  grid-column: 8 / span 4;
+  grid-column: 7 / span 4;
   -ms-flex-item-align: end;
       -ms-grid-row-align: end;
       align-self: end;
@@ -783,11 +783,11 @@ header {
   -ms-grid-row: 3;
   -ms-grid-row-span: 2;
   grid-row: 3 / span 2;
-  -ms-grid-column: 8;
-  -ms-grid-column-span: 4;
-  grid-column: 8 / span 4;
+  -ms-grid-column: 7;
+  -ms-grid-column-span: 5;
+  grid-column: 7 / span 5;
   font-weight: 100;
-  font-size: .9rem;
+  font-size: 0.9rem;
   font-size: clamp(0.8rem, 1.5vw, 1.1rem);
 }
 
@@ -797,13 +797,12 @@ header {
 
 .about-text a {
   color: #010038;
-  text-decoration: underline;
   -webkit-transition: font-weight 300ms ease-in-out;
   transition: font-weight 300ms ease-in-out;
 }
 
 .about-text a:hover {
-  font-weight: 700;
+  text-decoration: underline;
 }
 
 .about-img {
@@ -826,7 +825,7 @@ header {
   z-index: -100;
   -ms-grid-row: 3;
   -ms-grid-row-span: 2;
-  grid-row: 3 /span 2;
+  grid-row: 3 / span 2;
   grid-column: 1 / -1;
 }
 
@@ -835,8 +834,8 @@ header {
 }
 
 .about-btn {
-  -ms-grid-column: 8;
-  grid-column: 8;
+  -ms-grid-column: 7;
+  grid-column: 7;
   -ms-grid-row: 5;
   grid-row: 5;
   height: auto;
@@ -848,7 +847,7 @@ header {
         grid-template-columns: minmax(1em, auto) fit-content(550px) minmax(1em, auto);
     -ms-grid-rows: (auto)[6];
         grid-template-rows: repeat(6, auto);
-    gap: .5em;
+    gap: 0.5em;
   }
   .about-title {
     -ms-grid-row: 2;
@@ -865,7 +864,7 @@ header {
     -ms-grid-column: 2 !important;
     grid-column: 2 !important;
     font-size: 1rem;
-    font-size: clamp(1rem, 3vw, 1.6rem);
+    font-size: clamp(0.9rem, 2.8vw, 1.6rem);
     margin-top: 2em;
     padding: 0;
   }
@@ -878,7 +877,7 @@ header {
     width: 80% !important;
     -ms-grid-column-align: center;
         justify-self: center;
-    margin: .8em 0 .5em;
+    margin: 0.8em 0 0.5em;
   }
   .about-background {
     -ms-grid-row: 3;
