@@ -3,7 +3,6 @@ import smtplib
 import os
 import json
 from django.http import JsonResponse
-from .projectdata import data
 
 
 with open('/etc/config.json') as config_file:
@@ -35,8 +34,8 @@ def home(request):
     return render(request, 'portfolio/index.html')
 
 
-def project(request, project):
+""" def project(request, project):
     if request.method == 'GET':
         item = data[project]
         # print(item)
-        return JsonResponse(item)
+        return JsonResponse(item) """
