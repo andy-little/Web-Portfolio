@@ -42,7 +42,7 @@ h4 {
 h1,
 h2,
 h3 {
-  font-family: "Baloo Chettan 2", cursive;
+  font-family: "Baloo Chettan 2", "Roboto", sans-serif;
 }
 
 image {
@@ -57,7 +57,7 @@ image {
   max-height: 2.4rem;
   padding: 0.8em 0;
   color: white !important;
-  background: #F39422;
+  background: #f39422;
   font-weight: 700;
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -95,11 +95,11 @@ image {
 
 .section-title.secondary {
   grid-column: 2 / -3;
-  color: #2E9099;
+  color: #2e9099;
 }
 
 .section-title.secondary::after {
-  background-color: #2E9099;
+  background-color: #2e9099;
 }
 
 .section-title::after {
@@ -115,7 +115,7 @@ image {
 }
 
 .text-accent {
-  color: #F39422;
+  color: #f39422;
 }
 
 @media screen and (max-width: 46em) {
@@ -211,7 +211,7 @@ image {
 
 .desk-menu a:hover {
   cursor: pointer;
-  color: #F39422;
+  color: #f39422;
 }
 
 .scale {
@@ -241,11 +241,11 @@ image {
 }
 
 .mob-tog:hover {
-  border: #F39422 6px solid;
+  border: #f39422 6px solid;
 }
 
 .mob-tog:hover span {
-  background-color: #F39422;
+  background-color: #f39422;
 }
 
 .mob-tog.open .menu__top {
@@ -412,7 +412,7 @@ image {
 }
 
 .project-title-chevron {
-  color: #F39422;
+  color: #f39422;
   font-size: 2.6rem;
   text-shadow: 4px 4px 4px rgba(73, 68, 68, 0.6);
   -webkit-transition: text-shadow 200ms ease-in-out, -webkit-transform 200ms ease-in-out;
@@ -562,7 +562,7 @@ image {
 }
 
 .left-right .project-title {
-  color: #2E9099;
+  color: #2e9099;
   -ms-grid-column: 2;
   -ms-grid-column-span: 4;
   grid-column: 2 / span 4;
@@ -587,7 +587,7 @@ image {
 }
 
 .left-right .project-background {
-  background: #2E9099;
+  background: #2e9099;
   -webkit-clip-path: polygon(0 calc(0% + 3vw), 100% 0, 100% 100%, 0 calc(100% - 3vw));
           clip-path: polygon(0 calc(0% + 3vw), 100% 0, 100% 100%, 0 calc(100% - 3vw));
 }
@@ -604,7 +604,7 @@ image {
 }
 
 .all-projects-link:hover, .all-projects-link:focus {
-  color: #F39422;
+  color: #f39422;
 }
 
 header {
@@ -726,7 +726,7 @@ header {
   -ms-grid-row: 2;
   -ms-grid-row-span: 2;
   grid-row: 2 / span 2;
-  background-color: #DEF5F7;
+  background-color: #def5f7;
   padding: 1.5em 2.5em 1.5em;
   border-radius: 40px 3rem 3rem 40px;
 }
@@ -912,7 +912,7 @@ header {
 }
 
 .left-right .about-title {
-  color: #2E9099;
+  color: #2e9099;
   -ms-grid-column: 2;
   -ms-grid-column-span: 4;
   grid-column: 2 / span 4;
@@ -938,11 +938,11 @@ header {
   -ms-grid-column: 8;
   -ms-grid-column-span: 4;
   grid-column: 8 / span 4;
-  border: 5px solid #2E9099;
+  border: 5px solid #2e9099;
 }
 
 .left-right .about-background {
-  background: #2E9099;
+  background: #2e9099;
   -webkit-clip-path: polygon(0 calc(0% + 3vw), 100% 0, 100% 100%, 0 calc(100% - 3vw));
           clip-path: polygon(0 calc(0% + 3vw), 100% 0, 100% 100%, 0 calc(100% - 3vw));
 }
@@ -970,7 +970,7 @@ header {
   grid-row: 2;
   padding: 2em;
   width: 100%;
-  background-color: #F39422;
+  background-color: #f39422;
   border-radius: 40px;
   -webkit-box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
           box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
@@ -1008,7 +1008,7 @@ header {
 .contact .form label {
   display: block;
   color: white;
-  font-family: "Baloo Chettan 2", cursive;
+  font-family: "Baloo Chettan 2", "Roboto", sans-serif;
   margin-bottom: .5em;
   font-size: 1.2rem;
 }
@@ -1097,7 +1097,7 @@ header {
 }
 
 .footer a:hover {
-  color: #F39422;
+  color: #f39422;
 }
 
 .footer .fab {
@@ -1209,7 +1209,7 @@ header {
 }
 
 .footer-nav a:hover {
-  color: #F39422;
+  color: #f39422;
   -webkit-transform: translateY(-8px) scale(1.05);
           transform: translateY(-8px) scale(1.05);
 }
@@ -1259,7 +1259,7 @@ header {
             order: 3;
     margin: 1rem 0 0;
     font-size: .7rem;
-    color: #DEF5F7;
+    color: #def5f7;
   }
   .footer-container {
     -webkit-box-orient: vertical;

@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const animatedItems = document.querySelectorAll('.move');
     let index = 0;
     let interval;
-    const slideDuration = 7000;
+    const slideDuration = 7500;
 
     
     
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
         animatedItems.forEach((item)=>{
             item.style.transform =  step1;
             setTimeout(()=>{
-                loadProject(); 
+                loadProject();
                 item.style.opacity =  0;
                 item.style.transform =  step2;
             },100);
