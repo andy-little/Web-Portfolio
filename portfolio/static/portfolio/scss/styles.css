@@ -786,7 +786,7 @@ header {
   grid-column: 7 / span 5;
   font-weight: 100;
   font-size: 0.9rem;
-  font-size: clamp(0.8rem, 1.5vw, 1.1rem);
+  font-size: clamp(0.8rem, 1.7vw, 1.1rem);
 }
 
 .about-text ul {
@@ -862,7 +862,7 @@ header {
     -ms-grid-column: 2 !important;
     grid-column: 2 !important;
     font-size: 1rem;
-    font-size: clamp(0.9rem, 2.8vw, 1.6rem);
+    font-size: clamp(1rem, 2.8vw, 1.6rem);
     margin-top: 2em;
     padding: 0;
   }
