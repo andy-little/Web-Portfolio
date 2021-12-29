@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'portfolio/scss/styles.css'%}">
     <link rel="stylesheet" href="{% static 'portfolio/scss/all.css' %}">
+    <link rel="preload" href="{% static 'portfolio/images/lapmob-ear-trainer.png' %}" as="image">
     <link rel="preload" href="{% static 'portfolio/images/lapmob-gtr-1.png' %}" as="image">
     <link rel="preload" href="{% static 'portfolio/images/lapmob-money-1.png' %}" as="image">
     <link rel="preload" href="{% static 'portfolio/images/lapmob-jaffa.png' %}" as="image">
@@ -86,22 +87,23 @@
         <section id="projects" class="project right-left guitar marg-b">
             <h1 class="section-title">Projects</h1>
             <div class="project-btns">
-                <a class="btn site" target="_blank" href="https://www.anyonecanlearntoplayguitar.com">Website</a>
-                <a class="btn code" target="_blank" href="https://github.com/andy-little/AnyoneCanLearnToPlayGuitar">Code</a>
+                <a class="btn site" target="_blank" href="https://eartraining.netlify.app">Website</a>
+                <a class="btn code" target="_blank" href="https://github.com/andy-little/ear-training">Code</a>
             </div>
-            <h3 class="project-title"><i class="fas fa-chevron-left project-title-chevron prev-project"></i><a href='https://www.anyonecanlearntoplayguitar.com' target="_blank" class="project-title-text">learn to play guitar</a><i class="fas fa-chevron-right project-title-chevron next-project"></i></h3>
+            <h3 class="project-title"><i class="fas fa-chevron-left project-title-chevron prev-project"></i><a href="https://eartraining.netlify.app" target="_blank" class="project-title-text">ear trainer</a><i class="fas fa-chevron-right project-title-chevron next-project"></i></h3>
             <div class="project-background"></div>
-                <h4 class="project-subtitle move">In my time as a teacher I wrote a book. Here it is implemented as a website.</h4>
+                <h4 class="project-subtitle move">An app for musicians to improve on identifying notes relative to a chosen key.</h4>
                 <div class="project-text move">
-                    This was a front-end heavy project where I focused on responsive design. Functionality of the site includes <ul>
-                        <li> Personal account creation </li>
-                        <li> Secure login </li>
-                        <li> Password management via email </li>
-                        <li> Track and save progress </li>
-                        <li> Dynamically styled audio player </li>
+                    This is an original app and my most up-to-date coding example so please browse
+                    the source code! I tried to keep the code clean and dry and I made reusable components/custom-hooks wherever
+                    applicable. I built this app with the view to expand it into a much larger project.
+                    <ul>
+                        <li>React App</li>
+                        <li>Integration/unit tests</li>
+                        <li>Responsive design</li>
                     </ul>
                 </div>
-            <img class="project-laptop move" src="{% static 'portfolio/images/lapmob-gtr-1.png' %}" alt="loading screenshot">
+            <img class="project-laptop move" src="{% static 'portfolio/images/lapmob-ear-trainer.png' %}" alt="loading screenshot">
         </section>
 
        

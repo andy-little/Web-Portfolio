@@ -1,12 +1,20 @@
 const img = 'portfolio/images/'
 export const data = [
     {
-        site: "https://www.anyonecanlearntoplayguitar.com",
-        code: "https://github.com/andy-little/AnyoneCanLearnToPlayGuitar",
-        title: "learn to play guitar",
-        subtitle: "In my time as a teacher I wrote a book. Here it is implemented as a website.",
-        text: 'This was a front-end heavy project where I focused on responsive design. Functionality of the site includes <ul> <li> Personal account creation </li><li> Secure login </li><li> Password management via email </li><li> Track and save progress </li><li> Dynamically styled audio player </li></ul>',
-        img: `${static_url}${img}lapmob-gtr-1.png`
+        site: "https://eartraining.netlify.app",
+        code: "https://github.com/andy-little/ear-training",
+        title: "ear trainer",
+        subtitle: "An app for musicians to improve on identifying notes relative to a chosen key.",
+        text: `This is an original app and my most up-to-date coding example so please browse
+                    the source code! I tried to keep the code clean and dry and I made reusable components/custom-hooks wherever
+                    applicable. I built this app with the view to expand it into a much larger project.
+                    <ul>
+                        <li>React App</li>
+                        <li>Integration/unit tests</li>
+                        <li>Responsive design</li>
+                        <li>Best reflection of my current abilty</li>
+                    </ul>`,
+        img: `${static_url}${img}lapmob-ear-trainer.png`
     },
     {
         site: "/money",
@@ -15,6 +23,14 @@ export const data = [
         subtitle: "An app I built for managing household bills and other shared costs.",
         text: "Users first create a household. Members of this household can add their transactions to the group. Members can also:<ul><li> View their entire transaction history </li><li> Easily see who owes whom what </li><li> Settle debts </li><li> Edit/delete transactions not yet settled </li></ul>In this project I created my own paginator api which, unlike Django's, can be used asynchronously.",
         img: `${static_url}${img}lapmob-money-1.png`
+    },
+    {
+        site: "https://www.anyonecanlearntoplayguitar.com",
+        code: "https://github.com/andy-little/AnyoneCanLearnToPlayGuitar",
+        title: "learn to play guitar",
+        subtitle: "In my time as a teacher I wrote a book. Here it is implemented as a website.",
+        text: 'This was a front-end heavy project where I focused on responsive design. Functionality of the site includes <ul> <li> Personal account creation </li><li> Secure login </li><li> Password management via email </li><li> Track and save progress </li><li> Dynamically styled audio player </li></ul>',
+        img: `${static_url}${img}lapmob-gtr-1.png`
     },
     {
         site: "https://jaffalondon.herokuapp.com",
