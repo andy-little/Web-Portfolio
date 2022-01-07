@@ -9,7 +9,7 @@ const codeBtn = document.querySelector('.code');
 const animatedItems = document.querySelectorAll('.move');
 let index = 0;
 let interval;
-const slideDuration = 7500;
+const slideDuration = 10000;
 
 // toggle through projects
 // set data
@@ -35,7 +35,7 @@ function changeProject(direction){
         }
     }else{
         //swaps values so that animation is reversed
-        [step1, step2] =[step2, step1];
+        [step1, step2] = [step2, step1];
         index++;
         if(index >= data.length){
             index = 0;
