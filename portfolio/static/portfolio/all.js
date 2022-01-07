@@ -85,7 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevProject = document.querySelector('.prev-project')
     nextProject.onclick = () => changeProject('next');
     prevProject.onclick = () => changeProject('prev');
-    interval = setInterval(changeProject, slideDuration);
+    /* uncomment line below for slides to scroll automatically */
+    //interval = setInterval(changeProject, slideDuration);
 
 });
 
